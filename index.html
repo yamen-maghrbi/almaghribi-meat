@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ملحمة المغربي | الجودة عنواننا</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Tahoma, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f5f1ec;
+            color: #222;
+        }
+
+        /* ===== القائمة ===== */
+
+        header {
+            background: #650b0b;
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.25);
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffd166;
+        }
+
+        /* ===== الرئيسية ===== */
+
+        .hero {
+            min-height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+
+            background:
+                linear-gradient(rgba(75,0,0,0.82), rgba(130,10,10,0.82)),
+                radial-gradient(circle at center, #b73535, #4d0505);
+
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero .small-title {
+            font-size: 22px;
+            color: #ffd166;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 65px;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .main-button {
+            display: inline-block;
+            background: #ffd166;
+            color: #5c0909;
+            text-decoration: none;
+            padding: 15px 35px;
+            border-radius: 40px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.3s;
+            margin: 5px;
+        }
+
+        .main-button:hover {
+            transform: scale(1.07);
+            background: white;
+        }
+
+        /* ===== الأقسام ===== */
+
+        section {
+            padding: 70px 7%;
+        }
+
+        .title {
+            text-align: center;
+            color: #650b0b;
+            font-size: 36px;
+            margin-bottom: 45px;
+        }
+
+        /* ===== المنتجات ===== */
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .product {
+            background: white;
+            border-radius: 18px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.10);
+            transition: 0.3s;
+            border-bottom: 5px solid #8c1616;
+        }
+
+        .product:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .product h3 {
+            color: #650b0b;
+            font-size: 23px;
+            margin-bottom: 12px;
+        }
+
+        .product p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .price {
+            margin: 15px 0;
+            font-size: 20px;
+            font-weight: bold;
+            color: #8c1616;
+        }
+
+        .whatsapp-small {
+            display: inline-block;
+            background: #25d366;
+            color: white;
+            text-decoration: none;
+            padding: 10px 16px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .whatsapp-small:hover {
+            transform: scale(1.05);
+        }
+
+        /* ===== المعجنات ===== */
+
+        .pastries-intro {
+            text-align: center;
+            color: #666;
+            font-size: 18px;
+            margin-top: -25px;
+            margin-bottom: 35px;
+        }
+
+        /* ===== العروض ===== */
+
+        .offers {
+            background: #fff1d2;
+        }
+
+        .offer {
+            max-width: 850px;
+            margin: auto;
+            background: linear-gradient(135deg, #650b0b, #a51d1d);
+            color: white;
+            padding: 45px 30px;
+            text-align: center;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        }
+
+        .offer h3 {
+            color: #ffd166;
+            font-size: 34px;
+            margin-bottom: 20px;
+        }
+
+        .offer p {
+            font-size: 20px;
+            line-height: 2;
+        }
+
+        .fire {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        /* ===== لماذا نحن ===== */
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .feature {
+            background: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 18px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .feature-icon {
+            font-size: 45px;
+        }
+
+        .feature h3 {
+            color: #650b0b;
+            margin: 15px 0 10px;
+            font-size: 21px;
+        }
+
+        .feature p {
+            color: #666;
+        }
+
+        /* ===== التواصل ===== */
+
+        .contact {
+            background: #650b0b;
+            color: white;
+            text-align: center;
+        }
+
+        .contact .title {
+            color: #ffd166;
+        }
+
+        .contact p {
+            font-size: 20px;
+            margin: 15px;
+        }
+
+        .phone {
+            font-size: 28px !important;
+            color: #ffd166;
+            font-weight: bold;
+        }
+
+        .whatsapp {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 15px 35px;
+            background: #25d366;
+            color: white;
+            text-decoration: none;
+            border-radius: 40px;
+            font-size: 19px;
+            font-weight: bold;
+        }
+
+        .map-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 15px 35px;
+            background: #ffd166;
+            color: #650b0b;
+            text-decoration: none;
+            border-radius: 40px;
+            font-size: 19px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .map-button:hover {
+            transform: scale(1.05);
+            background: white;
+        }
+
+        /* ===== الفوتر ===== */
+
+        footer {
+            background: #350303;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* ===== الموبايل ===== */
+
+        @media (max-width: 900px) {
+
+            .products,
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
+            .hero {
+                min-height: 500px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero h2 {
+                font-size: 21px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .products,
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .title {
+                font-size: 29px;
+            }
+
+            .main-button {
+                font-size: 15px;
+                padding: 13px 22px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ===== القائمة ===== -->
+
+    <header>
+
+        <div class="logo">
+            🥩 ملحمة المغربي
+        </div>
+
+        <nav>
+            <a href="#home">الرئيسية</a>
+            <a href="#products">المنتجات</a>
+            <a href="#pastries">المعجنات</a>
+            <a href="#offers">العروض</a>
+            <a href="#contact">تواصل معنا</a>
+        </nav>
+
+    </header>
+
+
+    <!-- ===== الصفحة الرئيسية ===== -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="small-title">
+                أهلاً وسهلاً بكم في
+            </div>
+
+            <h1>
+                🥩 ملحمة المغربي
+            </h1>
+
+            <h2>
+                الجودة، النظافة، والأمانة عنواننا
+            </h2>
+
+            <p>
+                لحوم طازجة • تجهيز حسب الطلب • عروض وأسعار منافسة
+            </p>
+
+            <a href="#products" class="main-button">
+                🥩 اكتشف منتجاتنا
+            </a>
+
+            <a href="#pastries" class="main-button">
+                🥐 قسم المعجنات
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===== المنتجات ===== -->
+
+    <section id="products">
+
+        <h2 class="title">
+            🥩 منتجاتنا
+        </h2>
+
+        <div class="products">
+
+
+            <!-- لحم غنم -->
+
+            <div class="product">
+
+                <div class="product-icon">
+                    🐑
+                </div>
+
+                <h3>
+                    لحمة غنم
+                </h3>
+
+                <p>
+                    لحوم غنم طازجة ومختارة بعناية.
+                </p>
+
+                <div class="price">
+                    2000 ل.س جديدة / كغ
+                </div>
+
+                <a
+                    class="whatsapp-small"
+                    href="https://wa.me/963997200928?text=مرحبا، بدي أطلب لحمة غنم"
+                    target="_blank">
+
+                    💬 اطلب الآن
+
+                </a>
+
+            </div>
+
+
+            <!-- لحم عجل -->
+
+            <div class="product">
+
+                <div class="product-icon">
+                    🐄
+                </div>
+
+                <h3>
+                    لحمة عجل
+                </h3>
+
+                <p>
+                    لحوم عجل طازجة وتجهيز حسب الطلب.
+                </p>
+
+                <div class="price">
+                    1700 ل.س جديدة / كغ
+                </div>
+
+                <a
+                    class="whatsapp-small"
+                    href="https://wa.me/963997200928?text=مرحبا، بدي أطلب لحمة عجل"
+                    target="_blank">
+
+                    💬 اطلب الآن
+
+                </a>
+
+            </div>
+
+
+            <!-- فروج -->
+
+            <div class="product">
+
+                <div class="product-icon">
+                    🍗
+                </div>
+
+                <h3>
+                    فروج
+                </h3>
+
+                <p>
+                    فروج طازج وتجهيز مختلف حسب رغبتكم.
+                </p>
+
+                <div class="price">
+                    حسب السعر اليومي للفروج
+                </div>
+
+                <a
+                    class="whatsapp-small"
+                    href="https://wa.me/963997200928?text=مرحبا، بدي أطلب فروج"
+                    target="_blank">
+
+                    💬 اطلب الآن
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===== قسم المعجنات ===== -->
+
+    <section id="pastries">
+
+        <h2 class="title">
+            🥐 قسم المعجنات
+        </h2>
+
+        <p class="pastries-intro">
+            معجنات طازجة ومحضرة يومياً ❤️
+        </p>
+
+        <div class="products">
+
+
+            <!-- صفيحة -->
+
+            <div class="product">
+
+                <div class="product-icon">
+                    🥩
+                </div>
+
+                <h3>
+                    صفيحة باللحمة
+                </h3>
+
+                <p>
+                    صفيحة طازجة باللحمة وتجهيز يومي.
+                </p>
+
+                <div class="price">
+                    2200 ل.س جديدة لكل 1 كغ
+                </div>
+
+                <a
+                    class="whatsapp-small"
+                    href="https://wa.me/963997200928?text=مرحبا، بدي أطلب صفيحة باللحمة"
+                    target="_blank">
+
+                    💬 اطلب عبر واتساب
+
+                </a>
+
+            </div>
+
+
+            <!-- لحم بعجين -->
+
+            <div class="product">
+
+                <div class="product-icon">
+                    🍕
+                </div>
+
+                <h3>
+                    لحم بعجين
+                </h3>
+
+                <p>
+                    لحم بعجين طازج ومحضر بعناية.
+                </p>
+
+                <div class="price">
+                    70 ل.س جديدة لكل قطعة
+                </div>
+
+                <a
+                    class="whatsapp-small"
+                    href="https://wa.me/963997200928?text=مرحبا، بدي أطلب لحم بعجين"
+                    target="_blank">
+
+                    💬 اطلب عبر واتساب
+
+                </a>
+
+            </div>
+
+
+            <!-- جبنة -->
+
+            <div class="product">
+
+                <div class="product-icon">
+                    🧀
+                </div>
+
+                <h3>
+                    جبنة
+                </h3>
+
+                <p>
+                    معجنات بالجبنة بطعم لذيذ.
+                </p>
+
+                <div class="price">
+                    80 ل.س جديدة لكل قطعة
+                </div>
+
+                <a
+                    class="whatsapp-small"
+                    href="https://wa.me/963997200928?text=مرحبا، بدي أطلب معجنات جبنة"
+                    target="_blank">
+
+                    💬 اطلب عبر واتساب
+
+                </a>
+
+            </div>
+
+
+            <!-- زعتر -->
+
+            <div class="product">
+
+                <div class="product-icon">
+                    🌿
+                </div>
+
+                <h3>
+                    زعتر
+                </h3>
+
+                <p>
+                    معجنات بالزعتر الطازج.
+                </p>
+
+                <div class="price">
+                    40 ل.س جديدة لكل قطعة
+                </div>
+
+                <a
+                    class="whatsapp-small"
+                    href="https://wa.me/963997200928?text=مرحبا، بدي أطلب معجنات زعتر"
+                    target="_blank">
+
+                    💬 اطلب عبر واتساب
+
+                </a>
+
+            </div>
+
+
+            <!-- محمرة -->
+
+            <div class="product">
+
+                <div class="product-icon">
+                    🌶️
+                </div>
+
+                <h3>
+                    محمرة
+                </h3>
+
+                <p>
+                    محمرة بطعم مميز ولذيذ.
+                </p>
+
+                <div class="price">
+                    40 ل.س جديدة لكل قطعة
+                </div>
+
+                <a
+                    class="whatsapp-small"
+                    href="https://wa.me/963997200928?text=مرحبا، بدي أطلب محمرة"
+                    target="_blank">
+
+                    💬 اطلب عبر واتساب
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===== العروض ===== -->
+
+    <section class="offers" id="offers">
+
+        <h2 class="title">
+            🔥 عروض ملحمة المغربي
+        </h2>
+
+        <div class="offer">
+
+            <div class="fire">
+                🔥🔥🔥
+            </div>
+
+            <h3>
+                عروض نار وأسعار منافسة
+            </h3>
+
+            <p>
+                تابعونا باستمرار لمعرفة العروض الجديدة
+                على اللحوم والفروج والمنتجات المتوفرة.
+            </p>
+
+            <p>
+                الكمية محدودة في بعض العروض.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===== من نحن ===== -->
+
+    <section>
+
+        <h2 class="title">
+            🥩 من نحن
+        </h2>
+
+        <div class="offer">
+
+            <h3>
+                ملحمة المغربي
+            </h3>
+
+            <p>
+                نسعى دائماً لتقديم لحوم طازجة ومنتجات ذات جودة عالية،
+                مع الاهتمام بالنظافة والأمانة وحسن التعامل مع زبائننا.
+            </p>
+
+            <p>
+                هدفنا هو تقديم خدمة ترضيكم وأسعار منافسة تناسب الجميع.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===== لماذا نحن ===== -->
+
+    <section>
+
+        <h2 class="title">
+            ⭐ لماذا ملحمة المغربي؟
+        </h2>
+
+        <div class="features">
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🥩
+                </div>
+
+                <h3>
+                    طازج دائماً
+                </h3>
+
+                <p>
+                    نهتم بتقديم منتجات طازجة.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🧼
+                </div>
+
+                <h3>
+                    النظافة
+                </h3>
+
+                <p>
+                    النظافة جزء أساسي من عملنا.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🤝
+                </div>
+
+                <h3>
+                    الأمانة
+                </h3>
+
+                <p>
+                    ثقة الزبون هي أساس تعاملنا.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🔥
+                </div>
+
+                <h3>
+                    عروض مستمرة
+                </h3>
+
+                <p>
+                    عروض متنوعة وأسعار منافسة.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===== التواصل ===== -->
+
+    <section class="contact" id="contact">
+
+        <h2 class="title">
+            📞 تواصل معنا
+        </h2>
+
+        <p>
+            للطلب والاستفسار
+        </p>
+
+        <p class="phone">
+            📱 0997200928
+        </p>
+
+        <p>
+            📍 ملحمة المغربي - صافيتا - المتراس - بجانب جامع المتراس
+        </p>
+
+        <a
+            class="whatsapp"
+            href="https://wa.me/963997200928"
+            target="_blank">
+
+            💬 تواصل معنا عبر واتساب
+
+        </a>
+
+        <br>
+
+        <a
+            class="whatsapp"
+            href="tel:0997200928">
+
+            📞 اتصل بنا
+
+        </a>
+
+        <br>
+
+        <a
+            class="map-button"
+            href="https://www.google.com/maps/search/?api=1&query=ملحمة+المغربي+المتراس+صافيتا"
+            target="_blank">
+
+            📍 موقعنا على الخريطة
+
+        </a>
+
+    </section>
+
+
+    <!-- ===== الفوتر ===== -->
+
+    <footer>
+
+        © 2026 ملحمة المغربي
+        <br>
+        الجودة • النظافة • الأمانة
+
+    </footer>
+
+
+</body>
+
+</html>
